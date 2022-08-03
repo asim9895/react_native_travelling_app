@@ -3,7 +3,14 @@ import React from "react";
 
 const Profile = () => {
 	return (
-		<View>
+		<View
+			style={{
+				flex: 1,
+				backgroundColor: "white",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
 			<Text>Profile</Text>
 		</View>
 	);
