@@ -3,7 +3,14 @@ import React from "react";
 
 const Favourites = () => {
 	return (
-		<View>
+		<View
+			style={{
+				flex: 1,
+				backgroundColor: "white",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
 			<Text>Favourites</Text>
 		</View>
 	);

@@ -3,7 +3,14 @@ import React from "react";
 
 const Location = () => {
 	return (
-		<View>
+		<View
+			style={{
+				flex: 1,
+				backgroundColor: "white",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
 			<Text>Location</Text>
 		</View>
 	);

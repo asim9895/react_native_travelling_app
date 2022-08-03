@@ -6,6 +6,16 @@ import {
 	Nunito_600SemiBold,
 	Nunito_800ExtraBold,
 } from "@expo-google-fonts/nunito";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from "./screens/Home";
+import Details from "./screens/Details";
+import Location from "./screens/Location";
+import Favourites from "./screens/Favourites";
+import Profile from "./screens/Profile";
+import Main from "./screens/Main";
+
+const Stack = createStackNavigator();
 
 const App = () => {
 	// added fonts for use in the application
@@ -19,20 +29,17 @@ const App = () => {
 	if (!fontLoaded) return null;
 
 	return (
-		<View style={styles.container}>
-			<Text>Open up App.js to start working on your app!</Text>
-			<StatusBar style="auto" />
-		</View>
+		<NavigationContainer>
+			<Stack.Navigator screenOptions={{ headerShown: false }}>
+				<Stack.Screen name="Main" component={Main} />
+				<Stack.Screen name="Home" component={Home} />
+				<Stack.Screen name="Details" component={Details} />
+				<Stack.Screen name="Location" component={Location} />
+				<Stack.Screen name="Favourites" component={Favourites} />
+				<Stack.Screen name="Profile" component={Profile} />
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-});
 
 export default App;
