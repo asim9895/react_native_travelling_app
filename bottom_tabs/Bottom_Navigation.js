@@ -22,6 +22,7 @@ const Bottom_Navigation = () => {
 					borderTopWidth: 0,
 					elevation: 0,
 				},
+				tabBarHideOnKeyboard: true,
 			})}
 		>
 			<Tab.Screen
