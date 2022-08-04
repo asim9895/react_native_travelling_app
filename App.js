@@ -5,9 +5,13 @@ import {
 	Nunito_400Regular,
 	Nunito_600SemiBold,
 	Nunito_800ExtraBold,
+	Nunito_700Bold,
 } from "@expo-google-fonts/nunito";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+	createStackNavigator,
+	CardStyleInterpolators,
+} from "@react-navigation/stack";
 import Home from "./screens/Home";
 import Details from "./screens/Details";
 import Location from "./screens/Location";
@@ -23,6 +27,7 @@ const App = () => {
 	let [fontLoaded] = useFonts({
 		Nunito_400Regular,
 		Nunito_600SemiBold,
+		Nunito_700Bold,
 		Nunito_800ExtraBold,
 	});
 
@@ -30,7 +35,12 @@ const App = () => {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator screenOptions={{ headerShown: false }}>
+			<Stack.Navigator
+				screenOptions={{
+					headerShown: false,
+					cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+				}}
+			>
 				<Stack.Screen name="Main" component={Main} />
 				<Stack.Screen name="Home" component={Home} />
 				<Stack.Screen name="Details" component={Details} />
