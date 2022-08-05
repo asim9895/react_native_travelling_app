@@ -1,0 +1,71 @@
+import { StyleSheet, Dimensions } from "react-native";
+
+let window_height = Dimensions.get("window").height;
+
+export const detailStyles = StyleSheet.create({
+	backIcon: {
+		position: "absolute",
+		zIndex: 1,
+		top: 30,
+		left: 0,
+		margin: 25,
+		width: 40,
+		height: 40,
+		borderRadius: 30,
+		opacity: 0.8,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#FBF9F7",
+	},
+	favouriteIcon: {
+		position: "absolute",
+		zIndex: 1,
+		top: 30,
+		right: 0,
+		margin: 25,
+		backgroundColor: "#FBF9F7",
+		padding: 10,
+		borderRadius: 20,
+		opacity: 0.8,
+		alignItems: "center",
+		flexDirection: "row",
+	},
+	bookNowButton: {
+		position: "absolute",
+		zIndex: 1,
+		bottom: 10,
+		backgroundColor: "#100A1C",
+		borderRadius: 20,
+		opacity: 0.8,
+		alignItems: "center",
+		justifyContent: "center",
+		width: "70%",
+		height: 50,
+		alignSelf: "center",
+	},
+	bookNowButtonText: {
+		fontSize: 20,
+		fontFamily: "Nunito_600SemiBold",
+		color: "white",
+	},
+	body: {
+		backgroundColor: "white",
+		marginTop: -20,
+		borderTopRightRadius: 20,
+		borderTopLeftRadius: 20,
+		width: "100%",
+		height: "auto",
+		flex: 1,
+		flexGrow: 1,
+		padding: 20,
+		marginBottom: 30,
+	},
+	row: {
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	column: {
+		flexDirection: "column",
+		alignItems: "center",
+	},
+});

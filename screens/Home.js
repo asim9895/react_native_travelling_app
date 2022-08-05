@@ -86,7 +86,7 @@ const Home = ({ navigation }) => {
 						renderItem={({ item }) => (
 							<TouchableOpacity
 								style={homeStyles.locationContainer}
-								onPress={() => navigation.navigate("Details")}
+								onPress={() => navigation.navigate("Details", { item })}
 								activeOpacity={0.8}
 							>
 								<Image source={item.image} style={homeStyles.locationImage} />
