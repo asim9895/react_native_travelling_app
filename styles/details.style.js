@@ -58,7 +58,7 @@ export const detailStyles = StyleSheet.create({
 		flex: 1,
 		flexGrow: 1,
 		padding: 20,
-		marginBottom: 30,
+		marginBottom: 100,
 	},
 	row: {
 		flexDirection: "row",

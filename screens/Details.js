@@ -1,8 +1,10 @@
-import { View, Text, Image, Dimensions } from "react-native";
+import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
 import React from "react";
 import { detailStyles } from "../styles/details.style";
 import { MaterialIcons, AntDesign, Ionicons } from "@expo/vector-icons";
-import { ScrollView } from "react-native-gesture-handler";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { people } from "../data/people";
+import MapView from "react-native-maps";
 
 let window_height = Dimensions.get("window").height;
 
@@ -103,6 +105,7 @@ const Details = ({ route, navigation }) => {
 								fontFamily: "Nunito_600SemiBold",
 								color: "grey",
 								textAlign: "justify",
+								opacity: 0.8,
 							}}
 						>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -113,6 +116,95 @@ const Details = ({ route, navigation }) => {
 							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 							sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</Text>
+					</View>
+
+					{/* categories starts */}
+					<View
+						style={{
+							flexDirection: "row",
+							alignItems: "center",
+							justifyContent: "space-between",
+						}}
+					>
+						<View
+							style={{
+								flexDirection: "row",
+								alignItems: "center",
+							}}
+						>
+							<View>
+								<FlatList
+									data={people}
+									horizontal
+									showsHorizontalScrollIndicator={false}
+									nestedScrollEnabled={true}
+									keyExtractor={(item) => item.id}
+									renderItem={({ item, index }) => (
+										<View>
+											<Image
+												source={item.image}
+												style={{
+													width: 27,
+													height: 27,
+													borderRadius: 15,
+													marginLeft: index === 0 ? 0 : -7,
+													borderWidth: 1,
+													borderColor: "white",
+												}}
+											/>
+										</View>
+									)}
+								/>
+							</View>
+							<View
+								style={{
+									backgroundColor: "grey",
+									paddingHorizontal: 7,
+									paddingVertical: 5,
+									borderRadius: 20,
+									marginLeft: -10,
+								}}
+							>
+								<Text style={{ fontSize: 12, color: "white" }}>3+ members</Text>
+							</View>
+						</View>
+
+						<View style={{ flexDirection: "row", alignItems: "center" }}>
+							<AntDesign
+								name="star"
+								size={22}
+								color="orange"
+								style={{ marginRight: 7 }}
+							/>
+							<Text>4.3</Text>
+						</View>
+					</View>
+
+					<View
+						style={{
+							width: "100%",
+							alignItems: "center",
+							justifyContent: "space-between",
+							height: 200,
+							backgroundColor: "red",
+							marginTop: 20,
+							borderRadius: 30,
+							overflow: "hidden",
+						}}
+					>
+						<MapView
+							initialRegion={{
+								latitude: 37.78825,
+								longitude: -122.4324,
+								latitudeDelta: 0.0922,
+								longitudeDelta: 0.0421,
+							}}
+							style={{
+								...StyleSheet.absoluteFillObject,
+								height: 200,
+								borderRadius: 50,
+							}}
+						/>
 					</View>
 				</View>
 			</ScrollView>
